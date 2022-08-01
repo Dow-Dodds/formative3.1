@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, li {
+  color: #252525;
+}
+
+h1 {
+  font-family: "crayonette-djr", sans-serif;
+  font-size: 48px;
+  margin-bottom: 1rem;
+  padding-top: 15px;
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+body {
+  font-family: "acumin-pro", sans-serif;
+  background-color: #F8F4E4;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+nav #logo {
+  width: 20%;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+nav h1 {
+  width: 60%;
+}
+
+#toolbar-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+#toolbar-wrapper #toolbar {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #15309F;
+  width: 80%;
+  display: flex;
+}
+#toolbar-wrapper #toolbar #search-input {
+  border: none;
+  font-size: 18px;
+  font-family: "acumin-pro", sans-serif;
+  width: 50%;
+  background-color: #F8F4E4;
+  color: #252525;
+}
+#toolbar-wrapper #toolbar #search-button {
+  font-size: 28px;
+  color: #F8F4E4;
+  padding-left: 1rem;
+}
+#toolbar-wrapper #toolbar #search-button:hover {
+  font-size: 30px;
+  top: 16%;
+}
+#toolbar-wrapper #toolbar #filter-btn {
+  font-size: 28px;
+  color: #F8F4E4;
+  margin-left: 5rem;
+}
+
+#result {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+#result img {
+  width: 100%;
+}
+#result #news-wrapper {
+  border-bottom: 1px solid #15309F;
+  padding-bottom: 1.3rem;
+  width: 100%;
+  height: auto;
+}
+#result #news-wrapper #article-detail {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #15309F;
+  max-height: 15rem;
+  overflow: scroll;
+}
+#result #news-wrapper #article-detail p {
+  color: #F8F4E4;
+}
+#result #news-wrapper #text-wrapper {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: auto;
+  background-color: #FCDB5B;
+}
+#result #news-wrapper #text-wrapper p {
+  margin-bottom: 0.5rem;
+}
+#result #news-wrapper #text-wrapper .bi-chevron-down {
+  font-size: 20px;
+  position: relative;
+  top: 5px;
+  left: 5px;
+}/*# sourceMappingURL=main.css.map */

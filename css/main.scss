@@ -1,0 +1,151 @@
+$main-font: "acumin-pro", sans-serif;
+$head-fonts: "crayonette-djr", sans-serif;;
+
+//colour variables 
+$blue: #15309F;
+$yellow: #FCDB5B;
+$white: #F8F4E4;
+$red: #E93F33;
+$black: #252525;
+
+
+* {
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p, a, li {
+    color: $black;
+}
+h1 {
+   font-family: $head-fonts;
+   font-size: 48px;
+   margin-bottom: 1rem;
+   padding-top: 15px;
+   
+}
+
+h4 {
+        margin-bottom: .5rem;
+}
+
+h6 {
+   font-size: 12px;
+}
+
+
+
+body {
+    font-family: $main-font;
+    background-color: $white;
+   
+}
+nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        #logo {
+                width: 20%;
+                padding-left: 15px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+        }
+        h1 {
+                width: 60%;
+        }
+}
+
+#toolbar-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+
+        #toolbar {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                background-color: $blue;
+                width: 80%;
+                display: flex;
+                #search-input {
+                                   border: none; 
+                                   font-size: 18px;
+                                   font-family: $main-font;
+                                   width: 50%;
+                                   background-color: $white;
+                                   color: $black;
+                                
+                                }
+                                #search-button {
+                                        font-size: 28px; 
+                                        color: $white;
+                                        padding-left: 1rem;
+                                       
+                                      }
+                                #search-button:hover {
+                                        font-size: 30px; 
+                                        top: 16%;
+                                }
+                                #filter-btn{
+                                        font-size: 28px; 
+                                        color: $white;
+                                        margin-left: 5rem;
+                                }
+                        }
+
+}
+
+
+#result {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 20px;
+               
+        img {
+           width: 100%;
+        }
+
+        #news-wrapper {
+                border-bottom: 1px solid $blue;
+                padding-bottom: 1.3rem;
+                width: 100%;
+                height: auto;
+
+               #article-detail {
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                background-color: $blue;
+                max-height: 15rem;
+                overflow: scroll;
+             
+                 p {
+                    color: $white;
+                 }
+               
+               }
+               
+
+        }
+        #news-wrapper #text-wrapper{
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                
+             
+                height: auto;
+                background-color: $yellow;
+
+                p{
+                        margin-bottom: .5rem;
+                }
+                .bi-chevron-down{
+                        font-size: 20px;
+                        position: relative;
+                        top: 5px;
+                        left: 5px;
+
+                }
+        }
+
+}
