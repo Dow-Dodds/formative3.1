@@ -2,8 +2,10 @@ $main-font: "acumin-pro", sans-serif;
 $head-fonts: "crayonette-djr", sans-serif;;
 
 //colour variables 
-$blue: #15309F;
-$yellow: #FCDB5B;
+$blue: #6D9F71;
+//@at-root: #FCDB5B;
+$yellow: #A6A2D0;
+
 $white: #F8F4E4;
 $red: #E93F33;
 $black: #252525;
@@ -55,6 +57,7 @@ nav {
 
 #toolbar-wrapper {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         width: 100vw;
 
@@ -71,26 +74,84 @@ nav {
                                    width: 50%;
                                    background-color: $white;
                                    color: $black;
+                                   padding-left: 10px;
                                 
                                 }
                                 #search-button {
-                                        font-size: 28px; 
+                                        font-size: 25px; 
                                         color: $white;
                                         padding-left: 1rem;
-                                       
+                                  
                                       }
                                 #search-button:hover {
                                         font-size: 30px; 
                                         top: 16%;
                                 }
                                 #filter-btn{
-                                        font-size: 28px; 
+                                        font-size: 25px; 
                                         color: $white;
-                                        margin-left: 5rem;
+                                        
                                 }
+                                #filter-wrapper {
+                                        display: flex;
+                                        align-items: center;
+                                        width: 10%;
+                                        margin-left: 2rem;
+                                        h6 {
+                                                padding-right: 5px;
+                                                color: $white;
+                                            }
+                                        }
+                 }
+        #filter-options {
+                width: 80%;
+                padding: 1rem;
+                margin-bottom: 1rem;
+                background-color: #337357;
+                visibility: hidden;
+                height: 0;
+                position: absolute;
+                border-top: 1px solid $white;
+
+                h4, li {
+                color: $white;
+                }
+                h4 {
+                        margin-bottom: 1rem;
+                        padding-bottom: 0.5rem;
+                        border-bottom: 1px solid $white;
+                }
+                ul {
+                        display: flex;
+                        flex-wrap: wrap;
+                        list-style: none;
+                        padding: 0;
+                        li {
+                                width: fit-content;
+                                padding: .5rem;
+                                background-color: $yellow;
+                                margin-bottom: 1rem;
+                                margin-right: 1rem;
+                                cursor: pointer;
                         }
 
-}
+                        li:hover{
+                                background-color: $red;
+                        }
+                }
+                
+        }
+
+        #filter-options.active{
+                visibility: visible;
+                height: auto;
+                position: relative;
+                top: -1rem;
+        }
+  }
+
+                
+
 
 
 #result {
@@ -102,7 +163,12 @@ nav {
         img {
            width: 100%;
         }
+        h2 {
+        padding-left: 30px;
+        font-family: $head-fonts;
+        font-size: 30px;
 
+        }
         #news-wrapper {
                 border-bottom: 1px solid $blue;
                 padding-bottom: 1.3rem;
@@ -148,4 +214,36 @@ nav {
                 }
         }
 
+}
+
+footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: $blue;
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 10px;
+
+        #footer-nav {
+            display: flex;
+            flex-direction: column;
+            margin-left: 1rem;
+        }
+    
+        #logo {
+                width: 20%;
+        }
+
+        ul {
+                list-style: none;
+                a {
+                        color: $white;
+                }
+                li {
+                        color: $white;
+
+                }
+        }
 }

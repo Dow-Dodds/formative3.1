@@ -31,14 +31,14 @@ let showNews = (articles) => {
         </div>
         `
     });
-} 
+}
 
 $.ajax({
     type: 'GET',
     url: endpointURL + apiKey,
     
     success: (data) => {
-        console.log(data);
+       // console.log(data);
         showNews(data.results);
     },
     error: (error) => {
@@ -80,18 +80,16 @@ let searchedNews = (articles) => {
      let imagedata = "https://www.nytimes.com/" + item.multimedia[0].url;
   
       
-     console.log(imagedata);
-
+     
         result.innerHTML += `
+        <h2>Results for ${searchString}</h2>
         <div id="news-wrapper">
         <a href="${imagedata}"><img id="news-hero" src="${imagedata}" alt="news image"></a>
             <div id="text-wrapper">
                 <h4>${item.abstract}</h4>
                 <h6 class="chevron" id="${index}">Read More <i class="bi bi-chevron-down"></i></h6>
             </div>
-            <div id="article-detail">
-                <p>${item.lead_paragraph}...</p>
-            </div>
+           
 
         </div>
         `
@@ -101,4 +99,78 @@ let searchedNews = (articles) => {
 
 } 
 
+
+
+
+
+
+
+
+//filter section 
+const filterBtn = document.getElementById("filter-btn");
+const filterOpts = document.getElementById("filter-options");
+
+filterBtn.onclick = () => {
+ 
+    console.log("you clicked filter btn");
+    filterOpts.classList.toggle("active");
+   
+
+}
+
+const liCategory = document.querySelectorAll('ul li');
+
+liCategory.forEach(li => {
+    li.onclick = function(){
+        liCategory.forEach(li =>{
+            li.className = "";
+        })
+        li.className = "current";
+        //filter 
+        const filterValue = li.textContent;
+        console.log(filterValue);
+
+        let filteredNews = (articles) => {
+            result.innerHTML += `
+            <h2>Results for ${filterValue}</h2>
+            `
+            articles.forEach((item, index) => {
+               // console.log(item);
+             let imagedata = "https://www.nytimes.com/" + item.multimedia[0].url;
+          
+              
+             
+                result.innerHTML += `
+                <div id="news-wrapper">
+                <a href="${imagedata}"><img id="news-hero" src="${imagedata}" alt="news image"></a>
+                    <div id="text-wrapper">
+                        <h4>${item.abstract}</h4>
+                        <h6 class="chevron" id="${index}">Read More <i class="bi bi-chevron-down"></i></h6>
+                    </div>
+                   
+        
+                </div>
+                `
+            });
+         
+         
+        
+        } 
+
+        $.ajax({
+            type: 'GET',
+            url: searchendpoint + "q=" + filterValue + "&" + apiKey,
+            
+            success: (data) => {
+                console.log(data);
+                result.innerHTML ="";
+                filteredNews(data.response.docs);
+            },
+            error: (error) => {
+                console.log(error);
+            } 
+        });
+
+    }
+})
 
